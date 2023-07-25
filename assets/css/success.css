@@ -3,9 +3,10 @@
   padding: 0;
 }
 
-.news-letter-left {
-  padding: 4.5rem;
+.text-container {
+  flex-direction: column;
   min-width: 100%;
+  padding: 4.5rem;
 }
 
 .subscribe-button-container {
@@ -32,8 +33,19 @@
 
 @media screen and (max-width: 80em) {
   /* main css */
-  .news-letter-container {
+  /* .news-letter-container {
     max-width: 32rem;
+  } */
+}
+
+@media screen and (max-width: 75em) {
+  .news-letter-section {
+    display: flex;
+    height: 100dvh;
+  }
+
+  .news-letter-container {
+    border-radius: 1rem;
   }
 }
 
@@ -44,7 +56,7 @@
     max-width: 100%;
   }
 
-  .news-letter-left {
+  .text-container {
     padding-block: 0;
     padding-inline: 2.5rem;
     height: 100%;

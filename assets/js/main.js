@@ -28,12 +28,3 @@ const validate = () => {
 };
 
 document.addEventListener("input", validate);
-
-//redirection
-const subBtn = document.getElementById("subscribeBtn");
-
-const sub = () => {
-  window.location.href = "./success.html";
-};
-
-subBtn.addEventListener("click", sub);
