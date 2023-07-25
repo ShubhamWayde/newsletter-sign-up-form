@@ -1,6 +1,6 @@
 // validation js
 const emailInput = document.getElementById("emailAddress");
-const emailValidationText = document.querySelector(".email-validation");
+const emailValidationText = document.querySelector(".validation");
 const emailValue = document.getElementById("userEmail");
 
 const validateEmail = (email) => {

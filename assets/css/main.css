@@ -180,15 +180,16 @@ body {
   width: 100%;
 }
 
-.news-letter-left {
-  align-items: start;
-  flex-direction: column;
+.text-container {
   margin-block: auto;
-  padding-block: 5rem;
-  padding-inline: 3rem;
+  padding-block: clamp(40px, 4.167vw, 80px);
+  padding-inline: clamp(24px, 2.5vw, 48px);
   max-width: 37rem;
-  min-width: 37rem;
   width: 100%;
+}
+
+.image-container {
+  max-width: 45%;
 }
 
 .news-letter-img {
@@ -209,29 +210,36 @@ body {
   width: 100%;
 }
 
-.feature {
+.news-letter-feature-list > li {
   gap: 0.75rem;
 }
 
-.feature > svg {
-  min-height: 1.5rem;
-  min-width: 1.5rem;
+.news-letter-feature-list > li::before {
+  content: "";
+  background: var(--clr-primary) url(./assets/images/ic-check-circle.svg);
+  border-radius: 100rem;
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
-.email-address {
-  --_label-validation-padding: 0.5rem;
-  flex-direction: column;
-  gap: 0.5rem;
+.form {
   width: 100%;
 }
 
-.email-address > label {
+.form-row {
+  --_label-validation-padding: 0.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row > label {
   font-size: var(--type-p-small);
   font-weight: 600;
   padding-inline: var(--_label-validation-padding);
 }
 
-.email-input {
+.form-row > input {
   color: var(--clr-dark);
   font-family: inherit;
   font-size: var(--type-p);
@@ -249,17 +257,17 @@ body {
   outline: 2px solid var(--clr-not-valid);
 }
 
-.email-validation {
+.validation {
   font-size: var(--type-p-small);
   font-weight: 400;
   padding-inline: var(--_label-validation-padding);
 }
 
-.email-validation.valid {
+.validation.valid {
   color: var(--clr-valid);
 }
 
-.email-validation.not-valid {
+.validation.not-valid {
   color: var(--clr-not-valid);
 }
 
@@ -281,6 +289,11 @@ body {
 
 @media screen and (max-width: 75em) {
   /* main css */
+
+  .image-container {
+    max-width: 100%;
+  }
+
   .news-letter-container {
     flex-wrap: wrap-reverse;
     gap: 0;
@@ -296,7 +309,7 @@ body {
     aspect-ratio: 1/1;
   }
 
-  .news-letter-left {
+  .text-container {
     padding: 3rem;
     min-width: 100%;
   }
