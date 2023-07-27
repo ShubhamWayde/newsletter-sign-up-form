@@ -16,6 +16,8 @@ const validate = () => {
     emailValidationText.classList.remove("not-valid");
     emailValidationText.classList.add("valid");
     emailInput.classList.remove("not-valid");
+    sessionStorage.setItem("userEmail", emailAddress);
+    console.log(emailAddress);
   } else if (emailAddress === "") {
     emailValidationText.innerHTML = "";
     emailInput.classList.remove("not-valid");

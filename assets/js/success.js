@@ -1,3 +1,4 @@
+const userEmail = document.getElementById("userEmail");
 const continueBrowsing = document.getElementById("continueBrowsing");
 
 const waydzo = () => {
@@ -5,3 +6,9 @@ const waydzo = () => {
 };
 
 continueBrowsing.addEventListener("click", waydzo);
+
+// get data from local storage
+
+const localUserEmail = sessionStorage.getItem("userEmail");
+
+userEmail.innerHTML = localUserEmail;

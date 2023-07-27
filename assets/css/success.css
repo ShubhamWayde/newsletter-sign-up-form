@@ -16,6 +16,7 @@
 .user-email {
   color: var(--clr-dark);
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .news-letter-heading {
