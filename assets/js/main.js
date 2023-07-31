@@ -2,6 +2,7 @@
 const emailInput = document.getElementById("emailAddress");
 const emailValidationText = document.querySelector(".validation");
 const emailValue = document.getElementById("userEmail");
+const subBtn = document.getElementById('subscribeBtn')
 
 const validateEmail = (email) => {
   const str =
@@ -17,7 +18,7 @@ const validate = () => {
     emailValidationText.classList.add("valid");
     emailInput.classList.remove("not-valid");
     sessionStorage.setItem("userEmail", emailAddress);
-    console.log(emailAddress);
+
   } else if (emailAddress === "") {
     emailValidationText.innerHTML = "";
     emailInput.classList.remove("not-valid");
@@ -28,6 +29,9 @@ const validate = () => {
     emailValidationText.classList.remove("valid");
   }
 };
+
+subBtn.addEventListener('click',validate())
+
 
 // lazy loading
 
@@ -41,7 +45,7 @@ const preloadImage = (img) => {
   img.src = src;
 };
 
-const imageObserver = new IntersectionObserver((entries, lazyImages) => {
+const imageObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       preloadImage(entry.target);
