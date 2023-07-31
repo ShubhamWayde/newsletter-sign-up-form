@@ -29,4 +29,29 @@ const validate = () => {
   }
 };
 
+// lazy loading
+
+const lazyImages = document.querySelectorAll("[data-src]");
+
+const preloadImage = (img) => {
+  const src = img.getAttribute("data-src");
+  if (!src) {
+    return;
+  }
+  img.src = src;
+};
+
+const imageObserver = new IntersectionObserver((entries, lazyImages) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      preloadImage(entry.target);
+      imageObserver.unobserve(entry.target);
+    }
+  });
+});
+
+lazyImages.forEach((image) => {
+  imageObserver.observe(image);
+});
+
 document.addEventListener("input", validate);
