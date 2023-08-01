@@ -6,6 +6,8 @@
 
   /*primary colors*/
   --clr-primary: rgba(88, 0, 89);
+  --clr-primary-300: rgba(88, 0, 89, 0.6);
+
 
   /* validation color */
   --clr-valid: #4caf50;
@@ -126,6 +128,10 @@ body {
   width: 100%;
 }
 
+.primary-button-filled:focus-visible{
+  outline: 3px solid var(--clr-primary-300);
+}
+
 .primary-button-filled:hover {
   background: var(--gradient-violet-blue);
 }
@@ -217,7 +223,7 @@ body {
 
 .news-letter-feature-list > li::before {
   content: "";
-  background: var(--clr-primary);
+  background-image: url(../images/ic-check-circle.svg);
   border-radius: 100rem;
   display: inline-block;
   height: 1.5rem;

@@ -30,7 +30,7 @@ const validate = () => {
   }
 };
 
-subBtn.addEventListener('click',validate())
+document.addEventListener("input", validate);
 
 
 // lazy loading
@@ -58,4 +58,3 @@ lazyImages.forEach((image) => {
   imageObserver.observe(image);
 });
 
-document.addEventListener("input", validate);
